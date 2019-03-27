@@ -1,0 +1,23 @@
+video, .center {
+	display: block;
+	margin: 0 auto;
+}
+
+.capital {
+	text-align: center;
+}
+
+hr { 
+	display: block;
+	margin-before: 0.5em;
+	margin-after: 0.5em;
+	margin-start: auto;
+	margin-end: auto;
+	overflow: hidden;
+	border-style: inset;
+	border-width: 1px;
+}
+
+.table-center {
+	margin: 0 auto;
+}

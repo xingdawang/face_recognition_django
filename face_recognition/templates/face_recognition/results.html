@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+	<title>results</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'main.css' %}">
+</head>
+<body>
+	<h2 class="capital">Original image</h2>
+	<img class="center" src="{% static "this_guy.jpg" %}" alt="Original Screenshot">
+	<h3  class="capital">Circled image</h3>
+	<img class="center" src="{% static "circled.jpg" %}" alt="Circled face in Screenshot">
+	<h3  class="capital">Cropped image</h3>
+	<img class="center" src="{% static "cropped.jpg" %}" alt="Circled face in Screenshot">
+	<h3  class="capital">This man maybe: {{person}} </h3>
+	<h3  class="capital">Percentage Distribution</h3>
+	{% for p in pct %}
+		{{ p }}
+	{% endfor %}
+
+	<table border="1px black"  class="table-center">
+		<tr>
+			{% for person_name in names %}
+				<td>{{ person_name }}</td>
+			{% endfor %}
+		</tr>
+		<tr>
+			{% for pct in pcts %}
+				<td>{{ pct }}</td>
+			{% endfor %}
+		</tr>
+	</table>
+</body>
+</html>

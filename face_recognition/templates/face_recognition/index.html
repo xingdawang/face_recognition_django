@@ -1,0 +1,31 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Capture a photo</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="{% static 'main.css' %}">
+</head>
+<body>
+	<div id="container">
+		<device type="media" onchange="update(this.data)"></device>
+		<video autoplay></video>
+		<h2 class="capital">Step (1): See video stream from camera</h2>
+
+		<hr>
+		<h2 class="capital">Step (2): Take a screenshot from video stream</h2>
+		<button class="center" id="screenshot-button">Take screenshot</button>
+		<form action="/results/" method="POST">
+			<img  class="center" id="screenshot-img" src="">
+			{% csrf_token %}
+			<input type="hidden" id="img-src" name="img-src", value="">
+			<hr>
+			<h2 class="capital">Step (3): Submit and analysis the screenshot</h2>
+			<input class="center" type="submit" value="Analysis screenshot">
+		</form>
+		<script src="{% static 'main.js' %}"></script>
+	</div>
+</body>
+</html>
